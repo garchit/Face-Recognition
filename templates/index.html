@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Matching App</title>
+
+    <style>
+        /* Reset some default styles */
+        body, h1, form {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #398439;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* Add responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Face Matching with Google Drive</h1>
+    <div class="form-container">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+        <label for="drive_folder_link">Google Drive Folder Link:</label>
+        <input type="text" name="folderLink" id="drive_folder_link" required>
+    </div>
+        <br><br>
+        <div class="input-group">
+        <label for="user_images">Upload Reference Images:</label>
+        <input type="file" name="images" id="user_images" multiple required>
+        </div>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
